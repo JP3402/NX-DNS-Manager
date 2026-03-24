@@ -129,12 +129,14 @@ int main(int argc, char* argv[])
     PadState pad;
     padInitializeDefault(&pad);
 
+    const char *potential_files[] = {
+        "/atmosphere/hosts/default.txt",
+        "/atmosphere/hosts/emummc.txt",
+        "/atmosphere/hosts/sysmmc.txt"
+    };
+    
     while(appletMainLoop()) {
-        const char *potential_files[] = {
-            "/atmosphere/hosts/default.txt",
-            "/atmosphere/hosts/emummc.txt",
-            "/atmosphere/hosts/sysmmc.txt"
-        };
+        
         char *found_files[3];
         int num_host_files = 0;
         for (int i = 0; i < 3; i++) {
