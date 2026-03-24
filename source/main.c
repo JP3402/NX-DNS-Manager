@@ -131,7 +131,7 @@ bool write_hosts_file(const char *path, HostEntry *entries, int num_entries) {
 
 void print_header(const char *subtitle) {
     printf("\x1b[2J"); // Clear screen
-    printf("NX DNS Manager - v1.1.0 (Safe Build)\n");
+    printf("NX DNS Manager - v1.1.0 \n");
     if (subtitle != NULL && strlen(subtitle) > 0) {
         printf("%s\n", subtitle);
     }
