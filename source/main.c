@@ -97,6 +97,16 @@ bool write_hosts_file(const char *path, HostEntry entries[], int num_entries) {
     return true;
 }
 
+// Function to print the standard header
+void print_header(const char *subtitle) {
+    printf("\x1b[2J"); // Clear screen
+    printf("NX DNS Manager - v1.0.3\n");
+    if (subtitle != NULL && strlen(subtitle) > 0) {
+        printf("%s\n", subtitle);
+    }
+    printf("\n");
+}
+
 // Function to check if a file exists
 bool file_exists(const char *path) {
     FILE *file = fopen(path, "r");
@@ -138,7 +148,7 @@ int main(int argc, char* argv[])
         char chosen_file[256] = "";
 
         if (num_host_files == 0) {
-            printf("\x1b[2J");
+            print_header(NULL);
             printf("No hosts files found in /atmosphere/hosts/.\n");
             printf("Please create default.txt, emummc.txt, or sysmmc.txt.\n\n");
             printf("Press + to exit.");
@@ -182,8 +192,7 @@ int main(int argc, char* argv[])
                 break;
             }
 
-            printf("\x1b[2J");
-            printf("Select a hosts file to edit:\n\n");
+            print_header("Select a hosts file to edit:");
 
             for (int i = 0; i < num_host_files; i++) {
                 if (i == selected_file) {
@@ -254,9 +263,7 @@ int main(int argc, char* argv[])
                 }
             }
 
-            printf("\x1b[2J");
-            
-            printf("NX DNS Manager - %s\n", chosen_file);
+            print_header(chosen_file);
             printf("Use D-Pad Up/Down to select an entry.\n");
             printf("Press A to toggle an entry on or off.\n");
             printf("Press Y to save changes.\n");
