@@ -31,8 +31,8 @@ include $(DEVKITPRO)/libnx/switch_rules
 #     - <libnx folder>/default_icon.jpg
 #---------------------------------------------------------------------------------
 VERSION_MAJOR := 1
-VERSION_MINOR := 0
-VERSION_MICRO := 2
+VERSION_MINOR := 1
+VERSION_MICRO := 0
 
 APP_TITLE	:=	NX DNS Manager
 APP_AUTHOR	:=	JP3402
