@@ -253,13 +253,17 @@ int main(int argc, char* argv[])
                 
                 if (kDown & HidNpadButton_Y) {
                     if (write_hosts_file(chosen_file, entries, num_entries)) {
-                        strcpy(saved_message, "Saved!");
+                        strncpy(saved_message, "Saved!", sizeof(saved_message) - 1);
+                        saved_message[sizeof(saved_message) - 1] = '\0';
+
                     } else {
-                        strcpy(saved_message, "Error saving!");
+                        strncpy(saved_message, "Error saving!", sizeof(saved_message) - 1);
+                        saved_message[sizeof(saved_message) - 1] = '\0';
                     }
                     num_entries = read_hosts_file(chosen_file, entries, 100);
                 } else if (kDown) {
-                    strcpy(saved_message, "");
+                    strncpy(saved_message, "", sizeof(saved_message) - 1);
+                    saved_message[sizeof(saved_message) - 1] = '\0';
                 }
             }
 
