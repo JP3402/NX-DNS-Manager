@@ -100,7 +100,7 @@ bool write_hosts_file(const char *path, HostEntry entries[], int num_entries) {
 // Function to print the standard header
 void print_header(const char *subtitle) {
     printf("\x1b[2J"); // Clear screen
-    printf("NX DNS Manager - v1.0.3\n");
+    printf("NX DNS Manager - v1.0.2\n");
     if (subtitle != NULL && strlen(subtitle) > 0) {
         printf("%s\n", subtitle);
     }
