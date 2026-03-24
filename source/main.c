@@ -256,7 +256,7 @@ int main(int argc, char* argv[])
 
             printf("\x1b[2J");
             
-            printf("DNS MITM Manager - %s\n", chosen_file);
+            printf("NX DNS Manager - %s\n", chosen_file);
             printf("Use D-Pad Up/Down to select an entry.\n");
             printf("Press A to toggle an entry on or off.\n");
             printf("Press Y to save changes.\n");
